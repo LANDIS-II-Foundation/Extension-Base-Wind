@@ -21,4 +21,4 @@ WindSeverities
        1         85% to 100%       0.95
 
 MapNames  wind/severity-{timestep}.img
-LogFile   wind-test-log.csv
+LogFile   wind/wind-test-log.csv
