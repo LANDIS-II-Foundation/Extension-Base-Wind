@@ -1,7 +1,7 @@
 Title:			README_BaseWind2.1
 Project:		LANDIS-II Landscape Change Model
-Project Component:	Extension-Base-Harvest
-Component Deposition:	https://github.com/LANDIS-II-Foundation/Extension-Base-Harvest
+Project Component:	Extension-Base-Wind
+Component Deposition:	https://github.com/LANDIS-II-Foundation/Extension-Base-Wind
 Author:			LANDIS-II Foundation
 Origin Date:		24 Mar 2017
 Final Date:		24 Mar 2017
