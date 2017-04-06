@@ -4,10 +4,22 @@ Project Component:	Extension-Base-Wind
 Component Deposition:	https://github.com/LANDIS-II-Foundation/Extension-Base-Wind
 Author:			LANDIS-II Foundation
 Origin Date:		24 Mar 2017
-Final Date:		24 Mar 2017
+Final Date:		06 Apr 2017
 
 
-Welcome to the source code repository for Extension-Base-Wind, a LANDIS-II extension. 
+Welcome to the source code repository for Extension-Base-Wind, a LANDIS-II disturbance extension.
+The Base Wind module generates wind events and tracks wind damage. During a wind time step, multiple 
+wind events may occur on the landscape. A wind event is a functiion of wind rotation period, event 
+intensity, event size, and event spread. Wind initiation and spread are not dependent upon forest 
+condition. Wind damage at each site affected by an event is dependent upon the age of the cohorts 
+(relative to species longevity) and wind intensity (speed).  The oldest cohorts are more vulnerable 
+than younger cohorts.  If a cohort is damaged by wind, the entire cohort is killed. The basis for the 
+wind behavior that generates the modules's wind events is defined in,
+
+Scheller, R. M. and Mladenoff, D. J. A forest growth and biomass module for a landscape simulation 
+model, LANDIS:  Design, validation, and application. Ecological Modelling. 2004; 180(1):211-229
+ 
+
 This README file provides the following info:
 
 	1) The basic relationship between 'the science' (various biological, geological, 
@@ -15,9 +27,9 @@ geochemical,climatological, ecological, spatial, and landscape ecological mechan
 and 'the model' (LANDIS-II);
 
 	2) The basic process for modifying and subsequently compiling the source code 
-(written in C#) into a new, Extension-Base-Wind.dll library.
+(written in C#) into a new, <name-of-your-extension-of-interest>.dll library.
 
-	3) The basic process for testing a new Extension-Base-Wind.dll library.
+	3) The basic process for testing a new, <name-of-your-extension-of-interest>.dll library.
 
 
 ##########################
@@ -161,12 +173,6 @@ Solution 'base harvest' (1 project)
 ...src\bin\		
 ...src\obj\
 
-
-	d. Save all files as a solution (.sln) in the LOCAL repo before performing the 
-	   (re)build 
-	d1. from the pull down menus: File ==> Save All
-	d2. Save as
-C:\Users\...\Extension-Base-Harvest\src\base-harvest.sln
 
 
 ===== STEP3. (Re)build the project ==========================================================
