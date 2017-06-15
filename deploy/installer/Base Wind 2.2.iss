@@ -36,7 +36,7 @@ Source: ..\examples\*.bat; DestDir: {#AppDir}\examples\Base Wind
 
 ; LANDIS-II identifies the extension with the info in this .txt file
 ; NB. New releases must modify the name of this file and the info in it
-#define InfoTxt "Base Wind 2.1.txt"
+#define InfoTxt "Base Wind 2.2.txt"
 Source: {#InfoTxt}; DestDir: {#LandisPlugInDir}
 
 [Run]
