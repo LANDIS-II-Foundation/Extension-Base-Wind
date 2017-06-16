@@ -1,11 +1,12 @@
 #define PackageName      "Base Wind"
 #define PackageNameLong  "Base Wind Extension"
-#define Version          "2.1.2"
+#define Version          "2.2"
 #define ReleaseType      "official"
 #define CoreVersion      "6.0"
 #define CoreReleaseAbbr  ""
 
-#define ExtDir "C:\Program Files\LANDIS-II\v6\bin\extensions"
+
+#define ExtDir "C:\Program Files\LANDIS-II\v6\bin\extensions"
 #define AppDir "C:\Program Files\LANDIS-II\v6\"
 #define LandisPlugInDir "C:\Program Files\LANDIS-II\plug-ins"
 
