@@ -25,14 +25,12 @@ Source: ..\..\src\bin\Debug\Landis.Extension.BaseWind.dll; DestDir: {#ExtDir}; F
 Source: ..\..\src\bin\Debug\Landis.Library.Metadata.dll; DestDir: {#ExtDir}; Flags: replacesameversion uninsneveruninstall
 
 
-; User Guides are no longer shipped with installer
-;Source: docs\LANDIS-II Base Wind v2.1 User Guide.pdf; DestDir: {#AppDir}\docs
 
 
 ; Complete example for testing the extension
-Source: ..\examples\*.txt; DestDir: {#AppDir}\examples\Base Wind
-Source: ..\examples\*.gis; DestDir: {#AppDir}\examples\Base Wind
-Source: ..\examples\*.bat; DestDir: {#AppDir}\examples\Base Wind
+Source: ..\examples\*.txt; DestDir: {#AppDir}\examples\Base Wind; Flags: replacesameversion
+Source: ..\examples\*.gis; DestDir: {#AppDir}\examples\Base Wind; Flags: replacesameversion
+Source: ..\examples\*.bat; DestDir: {#AppDir}\examples\Base Wind; Flags: replacesameversion
 
 
 ; LANDIS-II identifies the extension with the info in this .txt file
