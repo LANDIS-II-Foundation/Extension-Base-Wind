@@ -6,5 +6,4 @@ Type         disturbance:wind
 Assembly     Landis.Extension.BaseWind
 Class        Landis.Extension.BaseWind.PlugIn
 Description  "Wind Disturbance"
-UserGuide    "LANDIS-II Base Wind v2.2 User Guide.pdf"
 CoreVersion  6.0
