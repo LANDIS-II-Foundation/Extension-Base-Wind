@@ -1,11 +1,12 @@
 #define PackageName      "Base Wind"
 #define PackageNameLong  "Base Wind Extension"
-#define Version          "2.1.2"
+#define Version          "2.2"
 #define ReleaseType      "official"
 #define CoreVersion      "6.0"
 #define CoreReleaseAbbr  ""
 
-#define ExtDir "C:\Program Files\LANDIS-II\v6\bin\extensions"
+
+#define ExtDir "C:\Program Files\LANDIS-II\v6\bin\extensions"
 #define AppDir "C:\Program Files\LANDIS-II\v6\"
 #define LandisPlugInDir "C:\Program Files\LANDIS-II\plug-ins"
 
@@ -24,19 +25,17 @@ Source: ..\..\src\bin\Debug\Landis.Extension.BaseWind.dll; DestDir: {#ExtDir}; F
 Source: ..\..\src\bin\Debug\Landis.Library.Metadata.dll; DestDir: {#ExtDir}; Flags: replacesameversion uninsneveruninstall
 
 
-; User Guides are no longer shipped with installer
-;Source: docs\LANDIS-II Base Wind v2.1 User Guide.pdf; DestDir: {#AppDir}\docs
 
 
 ; Complete example for testing the extension
-Source: ..\examples\*.txt; DestDir: {#AppDir}\examples\Base Wind
-Source: ..\examples\*.gis; DestDir: {#AppDir}\examples\Base Wind
-Source: ..\examples\*.bat; DestDir: {#AppDir}\examples\Base Wind
+Source: ..\examples\*.txt; DestDir: {#AppDir}\examples\Base Wind; Flags: replacesameversion
+Source: ..\examples\*.gis; DestDir: {#AppDir}\examples\Base Wind; Flags: replacesameversion
+Source: ..\examples\*.bat; DestDir: {#AppDir}\examples\Base Wind; Flags: replacesameversion
 
 
 ; LANDIS-II identifies the extension with the info in this .txt file
 ; NB. New releases must modify the name of this file and the info in it
-#define InfoTxt "Base Wind 2.1.txt"
+#define InfoTxt "Base Wind 2.2.txt"
 Source: {#InfoTxt}; DestDir: {#LandisPlugInDir}
 
 [Run]
