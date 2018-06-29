@@ -1,42 +1,45 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>Landis.Extension.BaseWind</RootNamespace>
-    <AssemblyName>Landis.Extension.BaseWind</AssemblyName>
-    <AssemblyTitle>Base Wind</AssemblyTitle>
+    <AssemblyName>Landis.Extension.BaseWind-v3</AssemblyName>
+    <AssemblyTitle>Landis.Extension.BaseWind-v3</AssemblyTitle>
     <AssemblyCompany>Portland State University</AssemblyCompany>
     <AssemblyProduct>base_wind.Properties</AssemblyProduct>
     <AssemblyCopyright>Landis-II-Foundation</AssemblyCopyright>
-    <AssemblyVersion>2.2.0.0</AssemblyVersion>
+    <AssemblyVersion>3.0</AssemblyVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/LANDIS-II-Foundation/Extension-Base-Wind</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseUrl>https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://sites.google.com/site/landismodel/home</PackageProjectUrl>
+    <PackageProjectUrl>http://www.landis-ii.org</PackageProjectUrl>
     <NeutralLanguage>English</NeutralLanguage>
     <Authors>Portland State University</Authors>
     <Product>base_wind.Properties</Product>
     <Copyright>Landis-II-Foundation</Copyright>
+    <Version>3.0</Version>
+    <PackageTags>LANDIS-II;Landis;Extension;Base wind</PackageTags>
+    <Description>Landis.Extension.BaseWind</Description>
+    <PackageReleaseNotes>Landis.Extension.BaseWind</PackageReleaseNotes>
+    <FileVersion>7.0.0.0</FileVersion>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>D:\CGAProjects\Rob\landis_ii_dotnet_fork\Landis-ii-Core\Landis-ii-Core\bin\extensions\</OutputPath>
-  </PropertyGroup>
+
   <ItemGroup>
-    
-    <PackageReference Include="Landis.Core" Version="1.0.0" />
-    
-    <PackageReference Include="Landis.Library.AgeOnlyCohorts" Version="1.0.0" />
-    
-    <PackageReference Include="Landis.Library.Cohorts" Version="1.0.0" />
-    
-    <PackageReference Include="Landis.Library.Metadata" Version="1.0.0" />
-    
-    <PackageReference Include="Landis.SpatialModeling" Version="1.0.0" />
-    
-    <PackageReference Include="Landis.Utilities" Version="1.0.0" />
-    
-    <PackageReference Include="Troschuetz.Random" Version="4.3.0" />
+    <PackageReference Include="Landis.Core" Version="2.0.0" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Landis.Library.AgeOnlyCohorts-v3">
+      <HintPath>lib\Landis.Library.AgeOnlyCohorts-v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Landis.Library.Cohorts-v2">
+      <HintPath>lib\Landis.Library.ALandis.Library.Cohorts-v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Landis.Landis.Library.Metadata-v2">
+      <HintPath>lib\Landis.Library.Metadata-v2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  
   <ItemGroup>
     <Compile Remove="Model.cs" />
   </ItemGroup>
