@@ -156,4 +156,4 @@ $RECYCLE.BIN/
 .DS_Store
 
 # LANDIS-II
-/lib/*.dll
+/src/lib/*.dll
