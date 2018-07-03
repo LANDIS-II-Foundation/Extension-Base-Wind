@@ -1,0 +1,9 @@
+LandisData   Extension
+
+Name         "Base Wind"
+Version      "3.0"
+Type         disturbance:wind
+Assembly     Landis.Extension.BaseWind
+Class        Landis.Extension.BaseWind.PlugIn
+Description  "Wind Disturbance"
+CoreVersion  7.0
