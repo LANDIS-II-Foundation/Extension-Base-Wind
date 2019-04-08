@@ -13,7 +13,7 @@ namespace Landis.Extension.BaseWind
         
         public static ExtensionMetadata Extension {get; set;}
 
-        public static void InitializeMetadata(int Timestep, string MapFileName, ICore mCore)
+        public static void InitializeMetadata(int Timestep, string MapFileName)
         {
             ScenarioReplicationMetadata scenRep = new ScenarioReplicationMetadata() {
                 RasterOutCellArea = PlugIn.ModelCore.CellArea,
@@ -22,7 +22,7 @@ namespace Landis.Extension.BaseWind
                 //ProjectionFilePath = "Projection.?" 
             };
 
-            Extension = new ExtensionMetadata(mCore){
+            Extension = new ExtensionMetadata(PlugIn.ModelCore){
                 Name = PlugIn.ExtensionName,
                 TimeInterval = Timestep, 
                 ScenarioReplicationMetadata = scenRep
@@ -32,7 +32,8 @@ namespace Landis.Extension.BaseWind
             //          table outputs:   
             //---------------------------------------
 
-             PlugIn.eventLog = new MetadataTable<EventsLog>("wind-events-log.csv");
+            PlugIn.eventLog = new MetadataTable<EventsLog>("wind-events-log.csv");
+            PlugIn.summaryLog = new MetadataTable<SummaryLog>("wind-summary-log.csv");
 
             OutputMetadata tblOut_events = new OutputMetadata()
             {
@@ -44,6 +45,17 @@ namespace Landis.Extension.BaseWind
             tblOut_events.RetriveFields(typeof(EventsLog));
             Extension.OutputMetadatas.Add(tblOut_events);
 
+            PlugIn.ModelCore.UI.WriteLine("   Generating summary table...");
+            OutputMetadata tblOut_summary = new OutputMetadata()
+            {
+                Type = OutputType.Table,
+                Name = "WindSummaryLog",
+                FilePath = PlugIn.summaryLog.FilePath,
+                Visualize = true,
+            };
+
+            tblOut_summary.RetriveFields(typeof(SummaryLog));
+            Extension.OutputMetadatas.Add(tblOut_summary);
 
             //---------------------------------------            
             //          map outputs:         

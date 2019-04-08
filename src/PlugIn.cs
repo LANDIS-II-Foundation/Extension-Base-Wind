@@ -18,13 +18,15 @@ namespace Landis.Extension.BaseWind
     {
         public static readonly ExtensionType ExtType = new ExtensionType("disturbance:wind");
         public static MetadataTable<EventsLog> eventLog;
-
+        public static MetadataTable<SummaryLog> summaryLog;
         public static readonly string ExtensionName = "Base Wind";
         
         private string mapNameTemplate;
-        //private StreamWriter log;
         private IInputParameters parameters;
         private static ICore modelCore;
+        private int summaryTotalSites;
+        private int summaryEventCount;
+        //private int[] summaryEcoregionEventCount;
 
 
         //---------------------------------------------------------------------
@@ -66,7 +68,14 @@ namespace Landis.Extension.BaseWind
         public override void Initialize()
         {
 
-            MetadataHandler.InitializeMetadata(parameters.Timestep, parameters.MapNamesTemplate, ModelCore);
+            List<string> colnames = new List<string>();
+            foreach (IEcoregion ecoregion in modelCore.Ecoregions)
+            {
+                colnames.Add(ecoregion.Name);
+            }
+            ExtensionMetadata.ColumnNames = colnames;
+
+            MetadataHandler.InitializeMetadata(parameters.Timestep, parameters.MapNamesTemplate);
 
             Timestep = parameters.Timestep;
             mapNameTemplate = parameters.MapNamesTemplate;
@@ -74,10 +83,6 @@ namespace Landis.Extension.BaseWind
             SiteVars.Initialize();
             Event.Initialize(parameters.EventParameters, parameters.WindSeverities);
 
-            //ModelCore.UI.WriteLine("   Opening wind log file \"{0}\" ...", parameters.LogFileName);
-            //log = Landis.Data.CreateTextFile(parameters.LogFileName);
-            //log.AutoFlush = true;
-            //log.WriteLine("Time,Initiation Site,Total Sites,Damaged Sites,Cohorts Killed,Mean Severity");
         }
 
         //---------------------------------------------------------------------
@@ -98,9 +103,13 @@ namespace Landis.Extension.BaseWind
                 if (windEvent != null) {
                     LogEvent(PlugIn.ModelCore.CurrentTime, windEvent);
                     eventCount++;
+                    summaryEventCount++;
+
                 }
             }
-            ModelCore.UI.WriteLine("  Wind events: {0}", eventCount);
+
+
+            //ModelCore.UI.WriteLine("  Wind events: {0}", eventCount);
 
             //  Write wind severity map
             string path = MapNames.ReplaceTemplateVars(mapNameTemplate, PlugIn.modelCore.CurrentTime);
@@ -122,6 +131,10 @@ namespace Landis.Extension.BaseWind
                     outputRaster.WriteBufferPixel();
                 }
             }
+
+            WriteSummaryLog(PlugIn.modelCore.CurrentTime);
+            summaryTotalSites = 0;
+            summaryEventCount = 0;
         }
 
         //---------------------------------------------------------------------
@@ -129,13 +142,6 @@ namespace Landis.Extension.BaseWind
         private void LogEvent(int   currentTime,
                               Event windEvent)
         {
-            //log.WriteLine("{0},\"{1}\",{2},{3},{4},{5:0.0}",
-            //              currentTime,
-            //              windEvent.StartLocation,
-            //              windEvent.Size,
-            //              windEvent.SitesDamaged,
-            //              windEvent.CohortsKilled,
-            //              windEvent.Severity);
 
             eventLog.Clear();
             EventsLog el = new EventsLog();
@@ -147,12 +153,25 @@ namespace Landis.Extension.BaseWind
             el.CohortsKilled = windEvent.CohortsKilled;
             el.MeanSeverity = windEvent.Severity;
 
-
+            summaryTotalSites += windEvent.SitesDamaged;
             eventLog.AddObject(el);
             eventLog.WriteToFile();
 
+
         }
 
+        //---------------------------------------------------------------------
 
+        private void WriteSummaryLog(int currentTime)
+        {
+            summaryLog.Clear();
+            SummaryLog sl = new SummaryLog();
+            sl.Time = currentTime;
+            sl.TotalSitesDisturbed = summaryTotalSites;
+            sl.NumberEvents = summaryEventCount;
+
+            summaryLog.AddObject(sl);
+            summaryLog.WriteToFile();
+        }
     }
 }
