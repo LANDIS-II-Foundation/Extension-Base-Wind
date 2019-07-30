@@ -3,7 +3,7 @@
     <RootNamespace>Landis.Extension.BaseWind</RootNamespace>
     <AssemblyName>Landis.Extension.BaseWind-v3</AssemblyName>
     <AssemblyTitle>Landis.Extension.BaseWind-v3</AssemblyTitle>
-    <AssemblyCompany>Portland State University</AssemblyCompany>
+    <AssemblyCompany>LANDIS-II Foundation</AssemblyCompany>
     <AssemblyProduct>base_wind.Properties</AssemblyProduct>
     <AssemblyCopyright>Landis-II-Foundation</AssemblyCopyright>
     <AssemblyVersion>3.0</AssemblyVersion>
