@@ -1,42 +1,43 @@
-# What is the Base Fire Extension?
+# What is the Base Wind Extension?
 
-Base Fire generates wildfires that are dependent upon fire region (or 'landtype') specific inputs. Base Fire follows the principles of older LANDIS versions (v3.6 and earlier) whereby fire patches are put on the landscape following a log-normal size distribution and fire severity is a function of time-since-last-fire. 
+Base Wind generates circular, elliptical, or linear wind events, dependent upon wind speed. Wind events are not sensitive to landscape continuity. Inputs are dependent upon ecoregion specific inputs. 
 
 # Release Notes
 
-- Latest official release: Version 4.0 — September 2018
-- [View User Guide](https://github.com/LANDIS-II-Foundation/Extension-Base-Fire/blob/master/docs/LANDIS-II%20Base%20Fire%20v4.0%20User%20Guide.pdf).
+- Latest official release: Version 3.1 — April 2019
+- [View User Guide](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/docs/LANDIS-II%20Base%20Wind%20v3.0%20User%20Guide.pdf).
 - Full release details found in the User Guide and on GitHub.
 
 # Requirements
 
-To use Base Fire, you need:
+To use Base Wind, you need:
 
 - The [LANDIS-II model v7.0](http://www.landis-ii.org/install) installed on your computer.
 - Example files (see below)
 
 # Download
 
-Version 4.0 can be downloaded [here](https://github.com/LANDIS-II-Foundation/Extension-Base-Fire/blob/master/deploy/installer/LANDIS-II-V7%20Base%20Fire%204.0-setup.exe). To install it on your computer, launch the installer.
+Version 3.1 can be downloaded [here](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/deploy/installer/LANDIS-II-V7%20Base%20Wind%203.1-setup.exe). To install it on your computer, launch the installer.
 
-# Citation
-
-He, H. S. and Mladenoff, D. J. Spatially explicit and stochastic simulation of forest landscape fire disturbance and succession. Ecology. 1999; 80(1):81-99.
 # Example Files
 
 LANDIS-II requires a global parameter file for your scenario, and separate parameter files for each extension.
 
-Example files are [here](https://github.com/LANDIS-II-Foundation/NEED UPDATE.zip).
+Example files are [here](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/testings/Core7-BaseWind3.0/Base-wind-example.zip).
+
+# Citation
+
+Mladenoff, David J., and Hong S. He. "Design, behavior and application of LANDIS, an object-oriented model of forest landscape disturbance and succession." Spatial modeling of forest landscape change: approaches and applications. Cambridge University Press, Cambridge, UK (1999): 125-162.
 
 # Support
 
-If you have a question, please contact Hong He. 
+If you have a question, please contact Robert Scheller. 
 You can also ask for help in the [LANDIS-II users group](http://www.landis-ii.org/users).
 
-If you come across any issue or suspected bug, please post about it in the [issue section of the Github repository](https://github.com/LANDIS-II-Foundation/Extension-Base-Fire/issues).
+If you come across any issue or suspected bug, please post about it in the [issue section of the Github repository](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/issues) (GitID required).
 
 # Author
 
 [The LANDIS-II Foundation](http://www.landis-ii.org)
 
-Mail : HeH@missouri.edu
+Mail : rschell@ncsu.edu
