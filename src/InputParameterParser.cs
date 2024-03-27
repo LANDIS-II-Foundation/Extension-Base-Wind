@@ -25,8 +25,7 @@ namespace Landis.Extension.BaseWind
 
         public InputParameterParser()
         {
-            // FIXME: Hack to ensure that Percentage is registered with InputValues
-            Landis.Utilities.Percentage p = new Landis.Utilities.Percentage();
+           Landis.Utilities.Percentage p = new Landis.Utilities.Percentage();
         }
 
         //---------------------------------------------------------------------
@@ -177,11 +176,15 @@ namespace Landis.Extension.BaseWind
             ReadVar(mapNames);
             parameters.MapNamesTemplate = mapNames.Value;
 
-            InputVar<string> logFile = new InputVar<string>("LogFile");
-            ReadVar(logFile);
-            parameters.LogFileName = logFile.Value;
+            InputVar<string> summarylogFile = new InputVar<string>("SummaryLogFile");
+            ReadVar(summarylogFile);
+            parameters.SummaryLogFileName = summarylogFile.Value;
 
-            CheckNoDataAfter(string.Format("the {0} parameter", logFile.Name));
+            InputVar<string> eventlogFile = new InputVar<string>("EventLogFile");
+            ReadVar(eventlogFile);
+            parameters.EventLogFileName = eventlogFile.Value;
+
+            CheckNoDataAfter(string.Format("the {0} parameter", eventlogFile.Name));
 
             return parameters; //.GetComplete();
         }

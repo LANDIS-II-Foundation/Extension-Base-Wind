@@ -26,7 +26,6 @@ namespace Landis.Extension.BaseWind
         private static ICore modelCore;
         private int summaryTotalSites;
         private int summaryEventCount;
-        //private int[] summaryEcoregionEventCount;
 
 
         //---------------------------------------------------------------------
@@ -75,7 +74,7 @@ namespace Landis.Extension.BaseWind
             }
             ExtensionMetadata.ColumnNames = colnames;
 
-            MetadataHandler.InitializeMetadata(parameters.Timestep, parameters.MapNamesTemplate);
+            MetadataHandler.InitializeMetadata(parameters.Timestep, parameters.MapNamesTemplate, parameters.SummaryLogFileName, parameters.EventLogFileName);
 
             Timestep = parameters.Timestep;
             mapNameTemplate = parameters.MapNamesTemplate;

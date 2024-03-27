@@ -13,7 +13,7 @@ namespace Landis.Extension.BaseWind
         
         public static ExtensionMetadata Extension {get; set;}
 
-        public static void InitializeMetadata(int Timestep, string MapFileName)
+        public static void InitializeMetadata(int Timestep, string MapFileName, string summaryLogFileName, string eventLogFileName)
         {
             ScenarioReplicationMetadata scenRep = new ScenarioReplicationMetadata() {
                 RasterOutCellArea = PlugIn.ModelCore.CellArea,
@@ -32,8 +32,8 @@ namespace Landis.Extension.BaseWind
             //          table outputs:   
             //---------------------------------------
 
-            PlugIn.eventLog = new MetadataTable<EventsLog>("wind-events-log.csv");
-            PlugIn.summaryLog = new MetadataTable<SummaryLog>("wind-summary-log.csv");
+            PlugIn.eventLog = new MetadataTable<EventsLog>(eventLogFileName);
+            PlugIn.summaryLog = new MetadataTable<SummaryLog>(summaryLogFileName);
 
             OutputMetadata tblOut_events = new OutputMetadata()
             {

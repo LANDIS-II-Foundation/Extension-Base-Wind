@@ -15,14 +15,15 @@ namespace Landis.Extension.BaseWind
 		private IEventParameters[] eventParameters;
 		private List<ISeverity> severities;
 		private string mapNamesTemplate;
-		private string logFileName;
+		private string summaryLogFileName;
+        private string eventLogFileName;
 
-		//---------------------------------------------------------------------
+        //---------------------------------------------------------------------
 
-		/// <summary>
-		/// Timestep (years)
-		/// </summary>
-		public int Timestep
+        /// <summary>
+        /// Timestep (years)
+        /// </summary>
+        public int Timestep
 		{
 			get {
 				return timestep;
@@ -81,20 +82,38 @@ namespace Landis.Extension.BaseWind
 		//---------------------------------------------------------------------
 
 		/// <summary>
-		/// Name of log file.
+		/// Name of summary log file.
 		/// </summary>
-		public string LogFileName
+		public string SummaryLogFileName
 		{
 			get {
-				return logFileName;
+				return summaryLogFileName;
 			}
             set {
                 if (value == null)
                     throw new InputValueException(value.ToString(), "Value must be a file path.");
-                logFileName = value;
+                summaryLogFileName = value;
             }
 		}
 
+        //---------------------------------------------------------------------
+
+        /// <summary>
+        /// Name of event log file.
+        /// </summary>
+        public string EventLogFileName
+        {
+            get
+            {
+                return eventLogFileName;
+            }
+            set
+            {
+                if (value == null)
+                    throw new InputValueException(value.ToString(), "Value must be a file path.");
+                eventLogFileName = value;
+            }
+        }
         //---------------------------------------------------------------------
 
         public InputParameters(int ecoregionCount)
@@ -102,19 +121,6 @@ namespace Landis.Extension.BaseWind
             eventParameters = new IEventParameters[ecoregionCount];
             severities = new List<ISeverity>();
         }
-/*		//---------------------------------------------------------------------
 
-		public Parameters(int                timestep,
-		                  IEventParameters[] eventParameters,
-		                  ISeverity[]        severities,
-		                  string             mapNameTemplate,
-		                  string             logFileName)
-		{
-			this.timestep = timestep;
-			this.eventParameters = eventParameters;
-			this.severities = severities;
-			this.mapNamesTemplate = mapNameTemplate;
-			this.logFileName = logFileName;
-		}*/
 	}
 }

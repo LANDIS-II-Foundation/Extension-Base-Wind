@@ -53,11 +53,21 @@ namespace Landis.Extension.BaseWind
 		//---------------------------------------------------------------------
 
 		/// <summary>
-		/// Name of log file.
+		/// Name of summary log file.
 		/// </summary>
-		string LogFileName
+		string SummaryLogFileName
 		{
 			get;set;
 		}
-	}
+
+        //---------------------------------------------------------------------
+
+        /// <summary>
+        /// Name of event log file.
+        /// </summary>
+        string EventLogFileName
+        {
+            get; set;
+        }
+    }
 }
