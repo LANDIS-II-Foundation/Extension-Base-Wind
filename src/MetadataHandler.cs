@@ -5,6 +5,7 @@ using System.Text;
 using Landis.Library.Metadata;
 using Landis.Utilities;
 using Landis.Core;
+using System.IO;
 
 namespace Landis.Extension.BaseWind
 {
@@ -31,6 +32,9 @@ namespace Landis.Extension.BaseWind
             //---------------------------------------
             //          table outputs:   
             //---------------------------------------
+
+            CreateDirectory(eventLogFileName);
+            CreateDirectory(summaryLogFileName);
 
             PlugIn.eventLog = new MetadataTable<EventsLog>(eventLogFileName);
             PlugIn.summaryLog = new MetadataTable<SummaryLog>(summaryLogFileName);
@@ -76,9 +80,24 @@ namespace Landis.Extension.BaseWind
             MetadataProvider mp = new MetadataProvider(Extension);
             mp.WriteMetadataToXMLFile("Metadata", Extension.Name, Extension.Name);
 
-
-
-
         }
+
+        public static void CreateDirectory(string path)
+        {
+            //Require.ArgumentNotNull(path);
+            path = path.Trim(null);
+            if (path.Length == 0)
+                throw new ArgumentException("path is empty or just whitespace");
+            //throw new Exception(path);
+            string dir = Path.GetDirectoryName(path);
+            if (!string.IsNullOrEmpty(dir))
+            {
+                Landis.Utilities.Directory.EnsureExists(dir);
+            }
+
+            //return new StreamWriter(path);
+            return;
+        }
+
     }
 }
