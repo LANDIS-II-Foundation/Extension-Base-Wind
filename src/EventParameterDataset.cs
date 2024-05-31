@@ -2,7 +2,7 @@
 
 using Landis.Utilities;
 
-namespace Landis.Extension.BaseWind
+namespace Landis.Extension.OriginalWind
 {
 	/// <summary>
 	/// Editable parameters (size and frequency) for wind events for a

@@ -1,0 +1,9 @@
+LandisData   Extension
+
+Name         "Original Wind"
+Version      "4.0"
+Type         disturbance:wind
+Assembly     Landis.Extension.OriginalWind-v4
+Class        Landis.Extension.OriginalWind.PlugIn
+Description  "Wind Disturbance"
+CoreVersion  8.0

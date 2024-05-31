@@ -7,7 +7,7 @@ using Landis.Utilities;
 using Landis.Core;
 using System.IO;
 
-namespace Landis.Extension.BaseWind
+namespace Landis.Extension.OriginalWind
 {
     public static class MetadataHandler
     {

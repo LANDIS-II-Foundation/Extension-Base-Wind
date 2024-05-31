@@ -2,7 +2,7 @@
 
 using Landis.Utilities;
 
-namespace Landis.Extension.BaseWind
+namespace Landis.Extension.OriginalWind
 {
     public class EventParameters
         : IEventParameters

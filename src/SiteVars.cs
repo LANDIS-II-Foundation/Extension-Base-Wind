@@ -2,10 +2,10 @@
 
 using Landis.Core;
 using Landis.SpatialModeling;
-using Landis.Library.AgeOnlyCohorts;
+using Landis.Library.UniversalCohorts;
 using System;
 
-namespace Landis.Extension.BaseWind
+namespace Landis.Extension.OriginalWind
 {
     public static class SiteVars
     {
@@ -27,7 +27,7 @@ namespace Landis.Extension.BaseWind
             PlugIn.ModelCore.RegisterSiteVar(SiteVars.TimeOfLastEvent, "Wind.TimeOfLastEvent");
             PlugIn.ModelCore.RegisterSiteVar(SiteVars.Severity, "Wind.Severity");
 
-            cohorts = PlugIn.ModelCore.GetSiteVar<ISiteCohorts>("Succession.AgeCohorts");
+            cohorts = PlugIn.ModelCore.GetSiteVar<ISiteCohorts>("Succession.UniversalCohorts");
 
         }
 

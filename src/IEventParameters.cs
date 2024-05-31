@@ -1,6 +1,6 @@
 //  Authors:    Robert M. Scheller, James B. Domingo
 
-namespace Landis.Extension.BaseWind
+namespace Landis.Extension.OriginalWind
 {
     /// <summary>
     /// Size and frequency parameters for wind events in an ecoregion.

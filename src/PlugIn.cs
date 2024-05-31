@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 
-namespace Landis.Extension.BaseWind
+namespace Landis.Extension.OriginalWind
 {
     ///<summary>
     /// A disturbance plug-in that simulates wind disturbance.
@@ -19,7 +19,7 @@ namespace Landis.Extension.BaseWind
         public static readonly ExtensionType ExtType = new ExtensionType("disturbance:wind");
         public static MetadataTable<EventsLog> eventLog;
         public static MetadataTable<SummaryLog> summaryLog;
-        public static readonly string ExtensionName = "Base Wind";
+        public static readonly string ExtensionName = "Original Wind";
         
         private string mapNameTemplate;
         private IInputParameters parameters;
@@ -44,6 +44,11 @@ namespace Landis.Extension.BaseWind
                 return modelCore;
             }
         }
+        public override void AddCohortData()
+        {
+            return;
+        }
+
         //---------------------------------------------------------------------
 
         public override void LoadParameters(string dataFile, ICore mCore)

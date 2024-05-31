@@ -1,12 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <RootNamespace>Landis.Extension.BaseWind</RootNamespace>
-    <AssemblyName>Landis.Extension.BaseWind-v3</AssemblyName>
-    <AssemblyTitle>Landis.Extension.BaseWind-v3</AssemblyTitle>
+    <RootNamespace>Landis.Extension.OriginalWind</RootNamespace>
+    <AssemblyName>Landis.Extension.OriginalWind-v4</AssemblyName>
+    <AssemblyTitle>Landis.Extension.OriginalWind-v4</AssemblyTitle>
     <AssemblyCompany>LANDIS-II Foundation</AssemblyCompany>
     <AssemblyProduct>base_wind.Properties</AssemblyProduct>
     <AssemblyCopyright>Landis-II-Foundation</AssemblyCopyright>
-    <AssemblyVersion>3.0</AssemblyVersion>
+    <AssemblyVersion>4.0</AssemblyVersion>
+    <Version>4.0</Version>
+    <FileVersion>4.0.0.0</FileVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/LANDIS-II-Foundation/Extension-Base-Wind</RepositoryUrl>
@@ -15,32 +17,22 @@
     <PackageProjectUrl>http://www.landis-ii.org</PackageProjectUrl>
     <NeutralLanguage>English</NeutralLanguage>
     <Authors>Portland State University</Authors>
-    <Product>base_wind.Properties</Product>
     <Copyright>Landis-II-Foundation</Copyright>
-    <Version>3.0</Version>
-    <PackageTags>LANDIS-II;Landis;Extension;Base wind</PackageTags>
-    <Description>Landis.Extension.BaseWind</Description>
-    <PackageReleaseNotes>Landis.Extension.BaseWind</PackageReleaseNotes>
-    <FileVersion>7.0.0.0</FileVersion>
+    <PackageTags>LANDIS-II;Landis;Extension;wind</PackageTags>
+    <Description>Landis.Extension.OriginalWind</Description>
+    <PackageReleaseNotes>Landis.Extension.OriginalWind</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Landis.Core" Version="2.0.0" />
+    <PackageReference Include="Landis.Core" Version="3.0.1" />
   </ItemGroup>
   
   <ItemGroup>
-    <Reference Include="Landis.Library.AgeOnlyCohorts-v3">
-      <HintPath>lib\Landis.Library.AgeOnlyCohorts-v3.dll</HintPath>
-    </Reference>
-    <Reference Include="Landis.Library.Cohorts-v2">
-      <HintPath>lib\Landis.Library.Landis.Library.Cohorts-v2.dll</HintPath>
+    <Reference Include="Landis.Library.UniversalCohorts-v1">
     </Reference>
     <Reference Include="Landis.Landis.Library.Metadata-v2">
       <HintPath>lib\Landis.Library.Metadata-v2.dll</HintPath>
     </Reference>
   </ItemGroup>
   
-  <ItemGroup>
-    <Compile Remove="Model.cs" />
-  </ItemGroup>
 </Project>
