@@ -1,29 +1,32 @@
 LandisData  "Scenario"
 
+
 >> ---------------------------------------------
 >> DEFINING A SCENARIO FOR A SINGLE LANDIS-II RUN
 >>----------------------------------------------
 
 >>	1. Provide the Required Inputs
->>	2. Sekect ONE Succession Extension
+>>	2. Select ONE Succession Extension
 >>	3. Select ONE OR MORE Disturbance Extensions (but only ONE harvest extension)
 >>	4. Select ONE OR MORE (compatible) Output Extensions
 
->>	A selection is made active by uncommenting a line (ie, remove the >> symbols)
+>>	A selection is made active by uncommenting a line (ie, remove the >> symbols) 
 
 
->>----------------------
+
+>>-------------------
 >> REQUIRED INPUTS
->>--------------------
+>>-------------------
 
-Duration  	100
+Duration  	50
 
-Species   	./species_s1e1.txt
+Species   	Core_species_data.txt
 
-Ecoregions      ./ecoregions_s1e1.txt
-EcoregionsMap   ./ecoregions_s1e1.gis
+Ecoregions      ./ecoregions.txt
+EcoregionsMap   ./ecoregions.tif
 
 CellLength  	100 << meters, 100 x 100 m = 1 ha
+
 
 
 >> -----------------------
@@ -32,7 +35,7 @@ CellLength  	100 << meters, 100 x 100 m = 1 ha
 
 >> 	Succession Extension     Initialization File
 >> 	--------------------     -------------------
-   	"Age-only Succession"	age-only-succession_SetUp_s1e1.txt
+	"Biomass Succession"	biomass-succession.txt
 
 
 >> --------------------------
@@ -41,24 +44,20 @@ CellLength  	100 << meters, 100 x 100 m = 1 ha
 
 >> 	Disturbance Extension	Initialization File
 >>	--------------------	-------------------
->>	"Base Fire"		base-fire_SetUp_s1e1.txt
-	"Base Wind"		base-wind_SetUp_s1e1.txt
->>	"Base Harvest"		base-harvest_SetUp_s1e1.txt
->>	"Base BDA"		base-BDA_SetUp_s1e1.txt
-
+>>	"Original Fire"		original-fire.txt
+	"Original Wind"		original-wind.txt
 
 >>   DisturbancesRandomOrder  yes  	<< optional
                          		<< Commented (default) is "no"
 
-
->> ----------------------
->> OUTPUT EXTENSIONS
+>> ------------------------
+>> OUTPUT EXTENSONS
 >> ----------------------
 
 >> 	Output Extension		Initialization File
 >> 	----------------		-------------------
-	"Output Max Species Age"	output_MaxSppAge.txt
->>	"Output Cohort Statistics"	output_CohortStats.txt
+>>  	"Output Biomass"		output_Biomass.txt		
+
 
 
 >> RandomNumberSeed  147  << optional parameter; uncomment for reproducibilty tests
