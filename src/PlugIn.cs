@@ -79,7 +79,7 @@ namespace Landis.Extension.OriginalWind
             Event.Initialize(parameters.EventParameters, parameters.WindSeverities);
 
             modelCore.UI.WriteLine("   Opening and Initializing wind log files \"{0}\" and \"{1}\"...", parameters.EventLogFileName, parameters.SummaryLogFileName);
-            ExtensionMetadata.ColumnNames = colnames;
+            //ExtensionMetadata.ColumnNames = colnames;
             MetadataHandler.InitializeMetadata(parameters.Timestep, parameters.MapNamesTemplate, parameters.SummaryLogFileName, parameters.EventLogFileName);
 
         }
