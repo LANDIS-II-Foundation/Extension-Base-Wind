@@ -340,3 +340,4 @@ testings/Core8-OriginalWind4.0/outputs-wind/wind-events-log.csv
 testings/Core8-OriginalWind4.0/outputs-wind/wind-summary-log.csv
 testings/Core8-OriginalWind4.0/Biomass-succession-log.csv
 testings/Core8-OriginalWind4.0/Metadata/Original Wind/WindEventLog_Metadata.xml
+src/base-wind.sln
