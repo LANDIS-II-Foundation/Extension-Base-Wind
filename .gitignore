@@ -227,3 +227,4 @@ testings/Core7-BaseWind3.0/outputs/wind/severity-90.img
 testings/Core7-BaseWind3.0/outputs/wind/severity-95.img
 testings/Core7-BaseWind3.0/wind-events-log.csv
 testings/Core7-BaseWind3.0/wind-summary-log.csv
+src/base-wind.sln
