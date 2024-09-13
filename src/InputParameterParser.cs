@@ -5,7 +5,7 @@ using Landis.Core;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Landis.Extension.BaseWind
+namespace Landis.Extension.OriginalWind
 {
     /// <summary>
     /// A parser that reads the plug-in's parameters from text input.

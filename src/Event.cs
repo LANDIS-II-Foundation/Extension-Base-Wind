@@ -2,14 +2,14 @@
 
 using Landis.Core;
 using Landis.SpatialModeling;
-using Landis.Library.AgeOnlyCohorts;
+using Landis.Library.UniversalCohorts;
 
 using System.Collections.Generic;
 
-namespace Landis.Extension.BaseWind
+namespace Landis.Extension.OriginalWind
 {
     public class Event
-        : ICohortDisturbance
+        : IDisturbance
     {
         private static RelativeLocation[] neighborhood;
         private static IEventParameters[] windEventParms;
@@ -110,7 +110,8 @@ namespace Landis.Extension.BaseWind
 
         ExtensionType IDisturbance.Type
         {
-            get {
+            get
+            {
                 return PlugIn.ExtType;
             }
         }
@@ -118,7 +119,8 @@ namespace Landis.Extension.BaseWind
 
         ActiveSite IDisturbance.CurrentSite
         {
-            get {
+            get
+            {
                 return currentSite;
             }
         }
@@ -200,15 +202,13 @@ namespace Landis.Extension.BaseWind
                 currentSite = (ActiveSite) site; // as ActiveSite;
 
                 if (currentSite) {
-                    KillSiteCohorts(currentSite);
+                    Damage(currentSite);
                     if (siteSeverity > 0)
                     {
                         sitesDamaged++;
                         totalSiteSeverities += siteSeverity;
-                        //UI.WriteLine("  site severity: {0}", siteSeverity);
                         SiteVars.Disturbed[currentSite] = true;
                         SiteVars.TimeOfLastEvent[currentSite] = currentTime;
-                        // SiteVars.LastSeverity[currentSite] = siteSeverity;
                     }
                     SiteVars.Severity[currentSite] = siteSeverity;
                 }
@@ -294,16 +294,20 @@ namespace Landis.Extension.BaseWind
 
         //---------------------------------------------------------------------
 
-        private void KillSiteCohorts(ActiveSite site)
+        private int Damage(ActiveSite site)
         {
-            SiteVars.Cohorts[site].RemoveMarkedCohorts(this);
+            int previousCohortsKilled = this.cohortsKilled;
+            SiteVars.Cohorts[site].ReduceOrKillCohorts(this);
+            return this.cohortsKilled - previousCohortsKilled;
+
+            //SiteVars.Cohorts[site].RemoveMarkedCohorts(this);
         }
 
         //---------------------------------------------------------------------
 
-        bool ICohortDisturbance.MarkCohortForDeath(ICohort cohort)
+        int IDisturbance.ReduceOrKillMarkedCohort(ICohort cohort)
         {
-            float ageAsPercent = cohort.Age / (float) cohort.Species.Longevity;
+            float ageAsPercent = cohort.Data.Age / (float) cohort.Species.Longevity;
             foreach (ISeverity severity in severities)
             {
                 if(ageAsPercent >= severity.MinAge && ageAsPercent <= severity.MaxAge)
@@ -313,12 +317,12 @@ namespace Landis.Extension.BaseWind
                         if (severity.Number > siteSeverity)
                             siteSeverity = severity.Number;
                         //UI.WriteLine("  cohort {0}:{1} killed, severity {2}", cohort.Species.Name, cohort.Age, severity.Number);
-                        return true;
+                        return cohort.Data.Biomass;
                     }
                     break;  // No need to search further in the table
                 }
             }
-            return false;
+            return 0;
         }
     }
 }

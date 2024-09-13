@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 
-namespace Landis.Extension.BaseWind
+namespace Landis.Extension.OriginalWind
 {
     ///<summary>
     /// A disturbance plug-in that simulates wind disturbance.
@@ -17,9 +17,9 @@ namespace Landis.Extension.BaseWind
         : ExtensionMain
     {
         public static readonly ExtensionType ExtType = new ExtensionType("disturbance:wind");
-        public static MetadataTable<EventsLog> eventLog;
-        public static MetadataTable<SummaryLog> summaryLog;
-        public static readonly string ExtensionName = "Base Wind";
+        public static MetadataTable<EventsLog> WindEventLog;
+        public static MetadataTable<SummaryLog> WindSummaryLog;
+        public static readonly string ExtensionName = "Original Wind";
         
         private string mapNameTemplate;
         private IInputParameters parameters;
@@ -31,7 +31,7 @@ namespace Landis.Extension.BaseWind
         //---------------------------------------------------------------------
 
         public PlugIn()
-            : base("Base Wind", ExtType)
+            : base("Original Wind", ExtType)
         {
         }
 
@@ -44,6 +44,11 @@ namespace Landis.Extension.BaseWind
                 return modelCore;
             }
         }
+        public override void AddCohortData()
+        {
+            return;
+        }
+
         //---------------------------------------------------------------------
 
         public override void LoadParameters(string dataFile, ICore mCore)
@@ -57,30 +62,25 @@ namespace Landis.Extension.BaseWind
         /// <summary>
         /// Initializes the plug-in with a data file.
         /// </summary>
-        /// <param name="dataFile">
-        /// Path to the file with initialization data.
-        /// </param>
-        /// <param name="startTime">
-        /// Initial timestep (year): the timestep that will be passed to the
-        /// first call to the component's Run method.
-        /// </param>
         public override void Initialize()
         {
+            PlugIn.ModelCore.UI.WriteLine("Initializing Original Wind ...");
 
             List<string> colnames = new List<string>();
             foreach (IEcoregion ecoregion in modelCore.Ecoregions)
             {
                 colnames.Add(ecoregion.Name);
             }
-            ExtensionMetadata.ColumnNames = colnames;
-
-            MetadataHandler.InitializeMetadata(parameters.Timestep, parameters.MapNamesTemplate, parameters.SummaryLogFileName, parameters.EventLogFileName);
 
             Timestep = parameters.Timestep;
             mapNameTemplate = parameters.MapNamesTemplate;
 
             SiteVars.Initialize();
             Event.Initialize(parameters.EventParameters, parameters.WindSeverities);
+
+            modelCore.UI.WriteLine("   Opening and Initializing wind log files \"{0}\" and \"{1}\"...", parameters.EventLogFileName, parameters.SummaryLogFileName);
+            //ExtensionMetadata.ColumnNames = colnames;
+            MetadataHandler.InitializeMetadata(parameters.Timestep, parameters.MapNamesTemplate, parameters.SummaryLogFileName, parameters.EventLogFileName);
 
         }
 
@@ -142,7 +142,7 @@ namespace Landis.Extension.BaseWind
                               Event windEvent)
         {
 
-            eventLog.Clear();
+            WindEventLog.Clear();
             EventsLog el = new EventsLog();
             el.Time = currentTime;
             el.InitRow = windEvent.StartLocation.Row;
@@ -153,8 +153,8 @@ namespace Landis.Extension.BaseWind
             el.MeanSeverity = windEvent.Severity;
 
             summaryTotalSites += windEvent.SitesDamaged;
-            eventLog.AddObject(el);
-            eventLog.WriteToFile();
+            WindEventLog.AddObject(el);
+            WindEventLog.WriteToFile();
 
 
         }
@@ -163,14 +163,14 @@ namespace Landis.Extension.BaseWind
 
         private void WriteSummaryLog(int currentTime)
         {
-            summaryLog.Clear();
+            WindSummaryLog.Clear();
             SummaryLog sl = new SummaryLog();
             sl.Time = currentTime;
             sl.TotalSitesDisturbed = summaryTotalSites;
             sl.NumberEvents = summaryEventCount;
 
-            summaryLog.AddObject(sl);
-            summaryLog.WriteToFile();
+            WindSummaryLog.AddObject(sl);
+            WindSummaryLog.WriteToFile();
         }
     }
 }

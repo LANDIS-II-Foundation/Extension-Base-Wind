@@ -1,6 +1,6 @@
 ﻿using Landis.Library.Metadata;
 
-namespace Landis.Extension.BaseWind
+namespace Landis.Extension.OriginalWind
 {
     public class SummaryLog
     {

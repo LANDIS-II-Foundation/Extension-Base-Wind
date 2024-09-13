@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace Landis.Extension.BaseWind
+namespace Landis.Extension.OriginalWind
 {
 	/// <summary>
 	/// Parameters for the plug-in.

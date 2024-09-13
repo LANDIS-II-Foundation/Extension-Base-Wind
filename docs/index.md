@@ -1,29 +1,27 @@
-# What is the Base Wind Extension?
+# What is the Original Wind Extension?
 
-Base Wind generates circular, elliptical, or linear wind events, dependent upon wind speed. Wind events are not sensitive to landscape continuity. Inputs are dependent upon ecoregion specific inputs. 
+Original Wind generates circular, elliptical, or linear wind events, dependent upon wind speed. Wind events are not sensitive to landscape continuity. Inputs are dependent upon ecoregion specific inputs. Original Wind follows the principles of older LANDIS versions (v3.6 and earlier). 
 
 # Release Notes
 
-- Latest official release: Version 3.1 — April 2019
-- [View User Guide](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/docs/LANDIS-II%20Base%20Wind%20v3.0%20User%20Guide.pdf).
+- Latest official release: Version 4.0 — August 2024
+- [View User Guide](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/docs/LANDIS-II%20Original%20Wind%20v4.0%20User%20Guide.pdf).
 - Full release details found in the User Guide and on GitHub.
 
 # Requirements
 
-To use Base Wind, you need:
+To run this extension, you need:
 
-- The [LANDIS-II model v7.0](http://www.landis-ii.org/install) installed on your computer.
+- The [LANDIS-II model v8.0](http://www.landis-ii.org/install) installed on your computer.
 - Example files (see below)
 
 # Download
 
-Version 3.1 can be downloaded [here](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/deploy/installer/LANDIS-II-V7%20Base%20Wind%203.1-setup.exe). To install it on your computer, launch the installer.
+The latest version can be downloaded [here](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/deploy/installer/LANDIS-II-V8%20Base%20Wind%204.0-setup.exe). (Look for the download icon in the upper right corner.)  Launch the installer.
 
 # Example Files
 
-LANDIS-II requires a global parameter file for your scenario, and separate parameter files for each extension.
-
-Example files are [here](https://downgit.github.io/#/home?url=https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/testings/Core7-BaseWind3.0).
+Example files are [here](https://downgit.github.io/#/home?url=https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/testings/Core8-OriginalWind4.0).
 
 # Citation
 
