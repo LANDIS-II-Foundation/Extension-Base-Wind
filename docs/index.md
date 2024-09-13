@@ -17,7 +17,7 @@ To run this extension, you need:
 
 # Download
 
-The latest version can be downloaded [here](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/deploy/installer/LANDIS-II-V8%20Base%20Wind%204.0-setup.exe). (Look for the download icon in the upper right corner.)  Launch the installer.
+The latest version can be downloaded [here](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/deploy/installer/LANDIS-II-V8%20Original%20Wind%204.0-setup.exe). (Look for the download icon in the upper right corner.)  Launch the installer.
 
 # Example Files
 
