@@ -15,7 +15,7 @@ To run this extension, you need:
 - The [LANDIS-II model v8.0](http://www.landis-ii.org/install) installed on your computer.
 - Example files (see below)
 
-# Download
+# Download and Install the Extension
 
 The latest version can be downloaded [here](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/deploy/installer/LANDIS-II-V8%20Original%20Wind%204.0-setup.exe). (Look for the download icon in the upper right corner.)  Launch the installer.
 
