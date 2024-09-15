@@ -20,12 +20,12 @@ namespace Landis.Extension.OriginalWind
             PlugIn.ModelCore.RegisterSiteVar(SiteVars.TimeOfLastEvent, "Wind.TimeOfLastEvent");
             PlugIn.ModelCore.RegisterSiteVar(SiteVars.Severity, "Wind.Severity");
 
-            Cohorts = PlugIn.ModelCore.GetSiteVar<ISiteCohorts>("Succession.UniversalCohorts");
+            Cohorts = PlugIn.ModelCore.GetSiteVar<SiteCohorts>("Succession.UniversalCohorts");
 
         }
 
         //---------------------------------------------------------------------
-        public static ISiteVar<ISiteCohorts> Cohorts { get; private set; }
+        public static ISiteVar<SiteCohorts> Cohorts { get; private set; }
         //---------------------------------------------------------------------
 
         public static ISiteVar<Event> Event { get; private set; }
