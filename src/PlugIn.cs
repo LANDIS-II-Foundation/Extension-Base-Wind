@@ -95,6 +95,8 @@ namespace Landis.Extension.OriginalWind
 
             SiteVars.Event.SiteValues = null;
             SiteVars.Severity.ActiveSiteValues = 0;
+            SiteVars.Disturbed.ActiveSiteValues = false;
+
 
             int eventCount = 0;
             foreach (ActiveSite site in PlugIn.ModelCore.Landscape) {
