@@ -6,9 +6,9 @@
     <AssemblyCompany>LANDIS-II Foundation</AssemblyCompany>
     <AssemblyProduct>base_wind.Properties</AssemblyProduct>
     <AssemblyCopyright>Landis-II-Foundation</AssemblyCopyright>
-    <AssemblyVersion>4.0</AssemblyVersion>
-    <Version>4.0</Version>
-    <FileVersion>4.0.0.0</FileVersion>
+    <AssemblyVersion>4.0.1</AssemblyVersion>
+    <Version>4.0.1</Version>
+    <FileVersion>4.0.1.0</FileVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/LANDIS-II-Foundation/Extension-Base-Wind</RepositoryUrl>
