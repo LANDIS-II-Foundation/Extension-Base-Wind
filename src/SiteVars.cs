@@ -26,19 +26,9 @@ namespace Landis.Extension.OriginalWind
 
         //---------------------------------------------------------------------
         public static ISiteVar<SiteCohorts> Cohorts { get; private set; }
-        //---------------------------------------------------------------------
-
         public static ISiteVar<Event> Event { get; private set; }
-
-        //---------------------------------------------------------------------
-
         public static ISiteVar<int> TimeOfLastEvent { get; private set; }
-
-        //---------------------------------------------------------------------
-
         public static ISiteVar<byte> Severity { get; private set; }
-        //---------------------------------------------------------------------
-
         public static ISiteVar<bool> Disturbed { get; private set; }
     }
 }
