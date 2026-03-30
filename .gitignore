@@ -346,3 +346,7 @@ testings/Core8-OriginalWind4.0/Climate-spinup-annual-log.csv
 testings/Core8-OriginalWind4.0/Metadata/Climate-Library/Future-Annual-Log_Metadata.xml
 testings/Core8-OriginalWind4.0/Metadata/Climate-Library/Spinup-Annual-Log_Metadata.xml
 src/base-wind.sln
+testings/Core8-OriginalWind4.0/Climate-future-annual-input-log.csv
+testings/Core8-OriginalWind4.0/Climate-future-monthly-input-log.csv
+testings/Core8-OriginalWind4.0/Climate-spinup-annual-input-log.csv
+testings/Core8-OriginalWind4.0/Climate-spinup-monthly-input-log.csv

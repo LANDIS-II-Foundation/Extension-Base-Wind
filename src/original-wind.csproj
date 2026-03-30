@@ -6,9 +6,9 @@
     <AssemblyCompany>LANDIS-II Foundation</AssemblyCompany>
     <AssemblyProduct>base_wind.Properties</AssemblyProduct>
     <AssemblyCopyright>Landis-II-Foundation</AssemblyCopyright>
-    <AssemblyVersion>4.0.1</AssemblyVersion>
-    <Version>4.0.1</Version>
-    <FileVersion>4.0.1.0</FileVersion>
+    <AssemblyVersion>4.1.0</AssemblyVersion>
+    <Version>4.1.0</Version>
+    <FileVersion>4.1.0.0</FileVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/LANDIS-II-Foundation/Extension-Base-Wind</RepositoryUrl>
@@ -28,8 +28,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Reference Include="Landis.Library.UniversalCohorts-v1">
-      <HintPath>lib\Landis.Library.UniversalCohorts-v1.dll</HintPath>
+    <Reference Include="Landis.Library.UniversalCohorts-v2">
+      <HintPath>lib\Landis.Library.UniversalCohorts-v2.dll</HintPath>
     </Reference>
     <Reference Include="Landis.Landis.Library.Metadata-v2">
       <HintPath>lib\Landis.Library.Metadata-v2.dll</HintPath>

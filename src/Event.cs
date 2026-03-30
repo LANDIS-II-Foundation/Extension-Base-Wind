@@ -305,7 +305,7 @@ namespace Landis.Extension.OriginalWind
 
         //---------------------------------------------------------------------
 
-        int IDisturbance.ReduceOrKillMarkedCohort(ICohort cohort)
+        double IDisturbance.ReduceOrKillMarkedCohort(ICohort cohort)
         {
             float ageAsPercent = cohort.Data.Age / (float) cohort.Species.Longevity;
             foreach (ISeverity severity in severities)
@@ -316,13 +316,13 @@ namespace Landis.Extension.OriginalWind
                         cohortsKilled++;
                         if (severity.Number > siteSeverity)
                             siteSeverity = severity.Number;
-                        //UI.WriteLine("  cohort {0}:{1} killed, severity {2}", cohort.Species.Name, cohort.Age, severity.Number);
-                        return cohort.Data.Biomass;
+
+                        return 1.0; // = total mortality (was cohort.Data.Biomass);
                     }
                     break;  // No need to search further in the table
                 }
             }
-            return 0;
+            return 0.0;
         }
     }
 }

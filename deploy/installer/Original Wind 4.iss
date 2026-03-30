@@ -1,7 +1,7 @@
 ; LANDIS-II Extension infomation
 #define CoreRelease "LANDIS-II-V8"
 #define ExtensionName "Original Wind"
-#define AppVersion "4.0.1"
+#define AppVersion "4.1"
 #define AppPublisher "LANDIS-II Foundation"
 #define AppURL "http://www.landis-ii.org/"
 
@@ -43,7 +43,6 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
 ; This .dll IS the extension (ie, the extension's assembly)
-; NB: Do not put an additional version number in the file name of this .dll
 ; (The name of this .dll is defined in the extension's \src\*.csproj file)
 Source: {#BuildDir}\Landis.Extension.OriginalWind-v4.dll; DestDir: {#ExtDir}; Flags: replacesameversion
 
