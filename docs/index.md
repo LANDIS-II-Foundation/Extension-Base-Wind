@@ -4,7 +4,7 @@ Original Wind generates circular, elliptical, or linear wind events, dependent u
 
 # Release Notes
 
-- Latest official release: Version 4.1 — March 2026
+- Latest official release: Version 4.1 — April 2026
 - [View User Guide](https://github.com/LANDIS-II-Foundation/Extension-Base-Wind/blob/master/docs/LANDIS-II%20Original%20Wind%20v4%20User%20Guide.pdf).
 - Full release details found in the User Guide and on GitHub.
 
