@@ -202,6 +202,7 @@ namespace Landis.Extension.OriginalWind
                 currentSite = (ActiveSite) site; // as ActiveSite;
 
                 if (currentSite) {
+                    siteSeverity = 0;  // maximum severity of this site's dead cohorts, not the event's
                     Damage(currentSite);
                     if (siteSeverity > 0)
                     {
