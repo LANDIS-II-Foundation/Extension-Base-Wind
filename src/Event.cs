@@ -210,7 +210,9 @@ namespace Landis.Extension.OriginalWind
                         SiteVars.Disturbed[currentSite] = true;
                         SiteVars.TimeOfLastEvent[currentSite] = currentTime;
                     }
-                    SiteVars.Severity[currentSite] = siteSeverity;
+                    //  Keep the highest severity of this time step, if an earlier event reached the site.
+                    if (siteSeverity > SiteVars.Severity[currentSite])
+                        SiteVars.Severity[currentSite] = siteSeverity;
                 }
 
                 if (sitesInEvent < size) {
